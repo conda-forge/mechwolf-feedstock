@@ -37,6 +37,7 @@ requirements:
     - python-xxhash
     - pytest-runner
     - pytest
+    - nb_conda_kernels
 
   run:
     - aiofiles
@@ -59,6 +60,7 @@ requirements:
     - python-xxhash
     - pytest-runner
     - pytest
+    - nb_conda_kernels
 
 test:
   imports:
