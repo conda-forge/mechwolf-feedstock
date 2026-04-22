@@ -10,7 +10,7 @@ source:
   sha256: 065f9d4b3e821cedf1e9dce5003f8cec56331306a4590f57985ba1f0326b1ee5
 
 build:
-  number: 2
+  number: 3
   script: "{{ PYTHON }} -m pip install . -vv"
   noarch: python 
 
@@ -30,7 +30,7 @@ requirements:
     - networkx
     - pint
     - python-graphviz
-    - python >=3.7
+    - python {{ python_min }}
     - pyyaml
     - terminaltables
     - vega
@@ -53,7 +53,7 @@ requirements:
     - networkx
     - pint
     - python-graphviz
-    - python >=3.7
+    - python >={{ python_min }}
     - pyyaml
     - terminaltables
     - vega
@@ -63,6 +63,8 @@ requirements:
     - nb_conda_kernels
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - mechwolf
     - mechwolf.components
